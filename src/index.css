@@ -1,13 +1,188 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  /* Sistema de diseño */
+  --primary: #4361ee;
+  --primary-dark: #3a0ca3;
+  --secondary: #f72585;
+  --accent: #4cc9f0;
+  --background: #f8f9fa;
+  --surface: #ffffff;
+  --error: #d90429;
+  --on-primary: #ffffff;
+  --on-background: #1a1a1a;
+  --on-surface: #2d2d2d;
+  
+  /* Espaciado */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  
+  /* Tipografía */
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  
+  /* Bordes */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+  
+  /* Elevación */
+  --elevation-1: 0 1px 3px rgba(0,0,0,0.12);
+  --elevation-2: 0 4px 6px rgba(0,0,0,0.1);
+  --elevation-3: 0 10px 15px rgba(0,0,0,0.1);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Reset moderno */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.5;
+  color: var(--on-background);
+  background-color: var(--background);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sistema de layout */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Componentes reutilizables */
+.card {
+  background: var(--surface);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--elevation-1);
+  padding: var(--spacing-md);
+  transition: all 0.3s ease;
+  margin-bottom: var(--spacing-md);
+}
+
+.card:hover {
+  box-shadow: var(--elevation-2);
+  transform: translateY(-2px);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  text-decoration: none;
+  font-size: var(--font-size-md);
+}
+
+.btn--primary {
+  background-color: var(--primary);
+  color: var(--on-primary);
+}
+
+.btn--primary:hover {
+  background-color: var(--primary-dark);
+  box-shadow: var(--elevation-1);
+}
+
+/* Formularios */
+.form-control {
+  margin-bottom: var(--spacing-md);
+}
+
+.form-label {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  font-weight: 500;
+  color: var(--on-surface);
+}
+
+.form-input {
+  width: 100%;
+  padding: var(--spacing-sm);
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-md);
+  transition: all 0.2s ease;
+}
+
+.form-input:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
+}
+
+/* Barra de navegación */
+.navbar {
+  background: var(--surface);
+  box-shadow: var(--elevation-1);
+  padding: var(--spacing-md) 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  :root {
+    --spacing-md: 12px;
+    --font-size-md: 0.9375rem;
+  }
+  
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+}
+
+/* Optimización para móviles */
+@media (hover: none) {
+  .card:hover {
+    transform: none;
+    box-shadow: var(--elevation-1);
+  }
 }
