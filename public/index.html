@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <!-- Viewport optimizado para Android -->
+   
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
     <meta name="theme-color" content="#6750A4" />
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -14,13 +14,13 @@
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!-- Precarga de fuentes para mejor rendimiento -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <title>Mi App React</title>
     <style>
-      /* Estilos iniciales para evitar FOUC */
+      
       body {
         margin: 0;
         padding: 0;
@@ -43,10 +43,8 @@
     <div id="root"></div>
     
     <script>
-      // Detección de touch para Android
       document.body.classList.add('is-android');
       
-      // Prevención de zoom no deseado
       document.addEventListener('gesturestart', function(e) {
         e.preventDefault();
       });

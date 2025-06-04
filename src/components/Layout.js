@@ -12,17 +12,17 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 const androidTheme = createTheme({
   palette: {
-    primary: { main: '#6750A4' }, // Color principal de Material Design 3
+    primary: { main: '#6750A4' }, 
     secondary: { main: '#958DA5' },
     background: { 
-      default: '#F3EDF7', // Fondo típico de Android
+      default: '#F3EDF7', 
       paper: '#FFFFFF' 
     },
   },
   typography: {
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
     button: {
-      textTransform: 'none' // Los botones sin mayúsculas
+      textTransform: 'none' 
     }
   },
   components: {
@@ -49,10 +49,10 @@ function Layout() {
       <Box sx={{ display: 'flex', minHeight: '100vh' }}>
         <CssBaseline />
         
-        {/* Menú lateral */}
+     
         <Menu mobileOpen={mobileOpen} handleDrawerToggle={handleDrawerToggle} />
         
-        {/* Botón de menú para móviles */}
+       
         {isMobile && (
           <IconButton
             color="inherit"

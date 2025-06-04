@@ -16,7 +16,7 @@ function Experiencia() {
       
       <Box sx={{ 
         position: 'relative',
-        paddingBottom: '56.25%', // 16:9
+        paddingBottom: '56.25%', 
         height: 0,
         overflow: 'hidden',
         borderRadius: 2,

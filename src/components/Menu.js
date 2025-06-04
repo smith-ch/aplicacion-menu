@@ -1,7 +1,7 @@
-import React from 'react';
+
 import { Link, useLocation } from 'react-router-dom';
 import { 
-  Box, // Importar Box
+  Box,
   Drawer, 
   SwipeableDrawer,
   List, 
@@ -9,9 +9,9 @@ import {
   ListItemIcon, 
   ListItemText,
   Divider,
-  Typography, // Importar Typography
+  Typography, 
   useTheme,
-  useMediaQuery // Importar useMediaQuery
+  useMediaQuery 
 } from '@mui/material';
 import {
   Home as HomeIcon,
