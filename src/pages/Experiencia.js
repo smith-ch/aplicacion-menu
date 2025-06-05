@@ -1,12 +1,12 @@
 import React from 'react';
 import { Box, Typography, Paper, Divider } from '@mui/material';
-import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
+import SmartDisplay from '@mui/icons-material/SmartDisplay';
 
 function Experiencia() {
   return (
     <Paper elevation={2} sx={{ p: 3, borderRadius: 3 }}>
       <Typography variant="h6" sx={{ mb: 2, fontWeight: 'bold' }}>
-        <VideoLibraryIcon sx={{ mr: 1, verticalAlign: 'bottom' }} />
+        <SmartDisplay sx={{ mr: 1, verticalAlign: 'bottom' }} />
         Mi Experiencia
       </Typography>
       

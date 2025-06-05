@@ -12,8 +12,8 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 const androidTheme = createTheme({
   palette: {
-    primary: { main: '#6750A4' }, 
-    secondary: { main: '#958DA5' },
+    primary: { main: '#dd0b0b' }, 
+    secondary: { main: '#dd0b0b' },
     background: { 
       default: '#F3EDF7', 
       paper: '#FFFFFF' 
@@ -29,7 +29,7 @@ const androidTheme = createTheme({
     MuiDrawer: {
       styleOverrides: {
         paper: {
-          backgroundColor: '#F3EDF7'
+          backgroundColor: '#b52c0e'
         }
       }
     }

@@ -23,10 +23,10 @@ function Inicio() {
         }}>
           <Avatar
             src="/WhatsApp Image 2025-05-17 at 12.47.38 PM.jpeg"
-            alt="Foto personal"
+            alt="Foto perso`nal"
             sx={{ 
-              width: 150, 
-              height: 150, 
+              width: 250, 
+              height:350, 
               mb: 3,
               border: '4px solid #6750A4'
             }}

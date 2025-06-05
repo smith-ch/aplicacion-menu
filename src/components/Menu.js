@@ -1,4 +1,3 @@
-
 import { Link, useLocation } from 'react-router-dom';
 import { 
   Box,
@@ -14,19 +13,19 @@ import {
   useMediaQuery 
 } from '@mui/material';
 import {
-  Home as HomeIcon,
+  HomeMax as Home,
   Add as AddIcon,
-  Translate as TranslateIcon,
+  GTranslate as TranslateIcon,
   TableChart as TableChartIcon,
-  VideoLibrary as VideoLibraryIcon
+  SmartDisplay as VideoFile
 } from '@mui/icons-material';
 
 const menuItems = [
-  { text: 'Inicio', icon: <HomeIcon />, path: '/' },
+  { text: 'Inicio', icon: <Home />, path: '/' },
   { text: 'Sumadora', icon: <AddIcon />, path: '/sumadora' },
   { text: 'Traductor', icon: <TranslateIcon />, path: '/traductor' },
   { text: 'Tablas', icon: <TableChartIcon />, path: '/tabla-multiplicar' },
-  { text: 'Experiencia', icon: <VideoLibraryIcon />, path: '/experiencia' },
+  { text: 'Experiencia', icon: <VideoFile />, path: '/experiencia' },
 ];
 
 function Menu({ mobileOpen, handleDrawerToggle }) {
@@ -38,7 +37,7 @@ function Menu({ mobileOpen, handleDrawerToggle }) {
     <>
       <Box sx={{ p: 2, textAlign: 'center' }}>
         <Typography variant="h6" sx={{ color: theme.palette.primary.main }}>
-          Menú de Opciones
+         Menu de opciones
         </Typography>
       </Box>
       <Divider />
@@ -76,7 +75,10 @@ function Menu({ mobileOpen, handleDrawerToggle }) {
             </ListItemIcon>
             <ListItemText 
               primary={item.text} 
-              primaryTypographyProps={{ fontWeight: 'medium' }}
+              primaryTypographyProps={{ 
+                fontWeight: 'medium',
+                color: 'black' 
+              }}
             />
           </ListItem>
         ))}
@@ -98,7 +100,9 @@ function Menu({ mobileOpen, handleDrawerToggle }) {
           '& .MuiDrawer-paper': {
             width: 240,
             boxSizing: 'border-box',
-            backgroundColor: theme.palette.background.default,
+            background: 'linear-gradient(145deg,rgb(25, 30, 46) 0%,rgb(0, 123, 255) 100%)',
+            boxShadow: '0 0 20px rgba(255, 25, 25, 0.05)', // Sombra sutil
+            borderRight: '1px solid rgba(0, 0, 0, 0.08)', // Borde sutil
           },
         }}
       >
@@ -115,8 +119,9 @@ function Menu({ mobileOpen, handleDrawerToggle }) {
         '& .MuiDrawer-paper': {
           width: 240,
           boxSizing: 'border-box',
-          backgroundColor: theme.palette.background.default,
-          borderRight: 'none'
+          background: 'linear-gradient(145deg,rgb(250, 129, 145) 0%, #e6f0fb 100%)',
+          boxShadow: '0 0 20px rgba(0, 0, 0, 0.05)', // Sombra sutil
+          borderRight: '1px solid rgba(0, 0, 0, 0.08)', // Borde sutil
         },
       }}
       variant="permanent"
@@ -128,3 +133,12 @@ function Menu({ mobileOpen, handleDrawerToggle }) {
 }
 
 export default Menu;
+/*
+Para importar un icono específico de Material UI Icons, usa la siguiente sintaxis:
+
+
+Por ejemplo, para importar el icono de "Alarm":
+
+
+Luego puedes usar <AlarmIcon /> en tu JSX.
+*/

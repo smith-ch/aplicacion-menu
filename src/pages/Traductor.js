@@ -8,7 +8,7 @@ import {
   Chip,
   Divider
 } from '@mui/material';
-import TranslateIcon from '@mui/icons-material/Translate';
+import GTranslate from '@mui/icons-material/GTranslate';
 
 function Traductor() {
   const [numero, setNumero] = useState('');
@@ -66,7 +66,7 @@ function Traductor() {
   return (
     <Paper elevation={2} sx={{ p: 3, borderRadius: 3 }}>
       <Typography variant="h6" sx={{ mb: 2, fontWeight: 'bold' }}>
-        <TranslateIcon sx={{ mr: 1, verticalAlign: 'bottom' }} />
+        <GTranslate sx={{ mr: 1, verticalAlign: 'bottom' }} />
         Traductor de Números
       </Typography>
       

@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.tarea.app',
-  appName: 'sumadora',
+  appId: 'com.tarea3.app',
+  appName: 'tarea3',
   webDir: 'build'
 };
 
