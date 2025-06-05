@@ -25,26 +25,21 @@ Video explicativo de la experiencia de desarrollo
 🛠 Instalación
 Clonar repositorio:
 
-bash
 git clone https://github.com/tuusuario/tu-repositorio.git
 cd tu-repositorio
 Instalar dependencias:
 
-bash
 npm install
 Configurar Capacitor:
 
-bash
 npx cap init
 npx cap add android
 ▶️ Ejecución
 Modo desarrollo:
 
-bash
 npm start
 Generar APK:
 
-bash
 npm run build
 npx cap copy android
 npx cap open android
@@ -76,5 +71,5 @@ json
   "react-router-dom": "^6.x"
 }
 🌟 Créditos
-Desarrollado por [Tu Nombre] - [2023]
-[Incluir enlaces a tu portfolio/LinkedIn si lo deseas]
+Desarrollado por [Smith Rodriguez Peguero] - [2023-1123]
+
