@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display-face), ui-serif, Georgia, serif;
+
+  --color-ink-950: #0a0a09;
+  --color-ink-900: #0e0e0d;
+  --color-ink-800: #1a1a17;
+  --color-ink-700: #232320;
+  --color-sand-50: #f1f0ec;
+  --color-sand-100: #e8e7e2;
+  --color-sand-200: #d7d5ce;
+  --color-brand: var(--brand, #3E4A52);
+  --color-brand-soft: color-mix(in oklab, var(--brand, #3E4A52) 14%, white);
+  --color-accent: var(--accent, #9FB4C0);
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-float: float 8s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+:root {
+  --brand: #3E4A52;
+  --accent: #9FB4C0;
+  color-scheme: light;
+}
+
+html { -webkit-font-smoothing: antialiased; }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+h1, h2, h3, h4, .font-heading { font-family: var(--font-display); letter-spacing: -0.02em; }
+
+body {
+  background: var(--color-sand-50);
+  color: var(--color-ink-900);
+}
+
+::selection { background: var(--brand); color: white; }
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+
+  .btn, .btn-primary, .btn-accent, .btn-ghost, .btn-dark {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary { @apply bg-brand text-white shadow-lg shadow-brand/25 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand/30; }
+  .btn-accent { @apply bg-accent text-ink-950 hover:-translate-y-0.5 hover:brightness-105; }
+  .btn-ghost { @apply border border-current/20 hover:bg-current/5; }
+  .btn-dark { @apply bg-ink-900 text-white hover:bg-ink-800; }
+  .btn-sm { @apply px-3.5 py-1.5 text-xs; }
+
+  .input { @apply w-full rounded-xl border border-ink-900/15 bg-white px-3.5 py-2.5 text-sm outline-none transition placeholder:text-ink-900/40 focus:border-brand focus:ring-4 focus:ring-brand/15; }
+  .label { @apply mb-1.5 block text-xs font-semibold tracking-wide text-ink-900/70 uppercase; }
+  .card { @apply rounded-2xl border border-ink-900/10 bg-white shadow-sm; }
+  .eyebrow { @apply text-xs font-semibold tracking-[0.25em] uppercase; }
+  .badge { @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold; }
+}
+
+
+/* Foco de luz que sigue al cursor sobre tarjetas (efecto "spotlight") */
+.spotlight {
+  position: relative;
+  isolation: isolate;
+}
+.spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), color-mix(in oklab, var(--brand) 32%, transparent), transparent 45%);
+  opacity: 0;
+  transition: opacity .35s;
+  z-index: -1;
+  pointer-events: none;
+}
+.spotlight:hover::before { opacity: 1; }
+
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
